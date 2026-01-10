@@ -72,45 +72,35 @@
 
 
 <!-- =========================
-     PORTFOLIO FILTRABLE
+     PORTFOLIO
 ========================= -->
 <section class="portfolio" id="portfolio">
+
   <h2 data-aos="fade-up">Portfolio</h2>
 
-  <!-- FILTRES -->
-  <div class="portfolio-filters" data-aos="fade-up">
-    <button class="filter-btn active" onclick="filterSelection('all')">Tout</button>
-    <button class="filter-btn" onclick="filterSelection('affiche')">Affiches</button>
-    <button class="filter-btn" onclick="filterSelection('logo')">Logos</button>
-    <button class="filter-btn" onclick="filterSelection('reseaux')">Réseaux sociaux</button>
+  <!-- ===== AFFICHES ===== -->
+  <h3 class="category-title" data-aos="fade-right">🎨 Affiches</h3>
+  <div class="grid">
+
+    <img src="images/affiches/affiche1.jpg" onclick="openPopup(this.src)" data-aos="zoom-in">
+    <img src="images/affiches/affiche2.jpg" onclick="openPopup(this.src)" data-aos="zoom-in">
+    <img src="images/affiches/affiche3.jpg" onclick="openPopup(this.src)" data-aos="zoom-in">
+
   </div>
 
-  <!-- GRID -->
-  <div class="portfolio-grid">
+  <!-- ===== LOGOS (vide pour l’instant) ===== -->
+  <h3 class="category-title" data-aos="fade-right">🧠 Logos</h3>
+  <div class="grid">
+    <!-- images/logos/logo1.jpg -->
+  </div>
 
-    <!-- AFFICHES -->
-    <div class="portfolio-item affiche">
-      <img src="images/affiches/affiche1.jpg" onclick="openPopup(this.src)">
-    </div>
-    <div class="portfolio-item affiche">
-      <img src="images/affiches/affiche2.jpg" onclick="openPopup(this.src)">
-    </div>
+  <!-- ===== RÉSEAUX SOCIAUX (vide) ===== -->
+  <h3 class="category-title" data-aos="fade-right">📱 Réseaux sociaux</h3>
+  <div class="grid">
+    <!-- images/reseaux/rs1.jpg -->
+  </div>
 
-    <!-- LOGOS -->
-    <div class="portfolio-item logo">
-      <img src="images/logos/logo1.jpg" onclick="openPopup(this.src)">
-    </div>
-    <div class="portfolio-item logo">
-      <img src="images/logos/logo2.jpg" onclick="openPopup(this.src)">
-    </div>
-
-    <!-- RÉSEAUX -->
-    <div class="portfolio-item reseaux">
-      <img src="images/reseaux/rs1.jpg" onclick="openPopup(this.src)">
-    </div>
-    <div class="portfolio-item reseaux">
-      <img src="images/reseaux/rs2.jpg" onclick="openPopup(this.src)">
-    </div>
+</section>
 
   </div>
 </section>
