@@ -71,15 +71,47 @@
 </section>
 
 
-<!-- PORTFOLIO -->
-<section class="portfolio scroll-3d" id="portfolio">
+<!-- =========================
+     PORTFOLIO FILTRABLE
+========================= -->
+<section class="portfolio" id="portfolio">
   <h2 data-aos="fade-up">Portfolio</h2>
 
-  <div class="grid">
-    <img src="./images/projet1.jpg" alt="Projet 1" onclick="openPopup(this.src)" data-aos="zoom-in">
-    <img src="./images/projet2.jpg" alt="Projet 2" onclick="openPopup(this.src)" data-aos="zoom-in">
-    <img src="./images/projet3.jpg" alt="Projet 3" onclick="openPopup(this.src)" data-aos="zoom-in">
-    <img src="./images/projet4.jpg" alt="Projet 4" onclick="openPopup(this.src)" data-aos="zoom-in">
+  <!-- FILTRES -->
+  <div class="portfolio-filters" data-aos="fade-up">
+    <button class="filter-btn active" onclick="filterSelection('all')">Tout</button>
+    <button class="filter-btn" onclick="filterSelection('affiche')">Affiches</button>
+    <button class="filter-btn" onclick="filterSelection('logo')">Logos</button>
+    <button class="filter-btn" onclick="filterSelection('reseaux')">Réseaux sociaux</button>
+  </div>
+
+  <!-- GRID -->
+  <div class="portfolio-grid">
+
+    <!-- AFFICHES -->
+    <div class="portfolio-item affiche">
+      <img src="images/affiches/affiche1.jpg" onclick="openPopup(this.src)">
+    </div>
+    <div class="portfolio-item affiche">
+      <img src="images/affiches/affiche2.jpg" onclick="openPopup(this.src)">
+    </div>
+
+    <!-- LOGOS -->
+    <div class="portfolio-item logo">
+      <img src="images/logos/logo1.jpg" onclick="openPopup(this.src)">
+    </div>
+    <div class="portfolio-item logo">
+      <img src="images/logos/logo2.jpg" onclick="openPopup(this.src)">
+    </div>
+
+    <!-- RÉSEAUX -->
+    <div class="portfolio-item reseaux">
+      <img src="images/reseaux/rs1.jpg" onclick="openPopup(this.src)">
+    </div>
+    <div class="portfolio-item reseaux">
+      <img src="images/reseaux/rs2.jpg" onclick="openPopup(this.src)">
+    </div>
+
   </div>
 </section>
 
@@ -452,7 +484,25 @@ dots.forEach((dot, index) => {
 
 </footer>
 
+<script>
+filterSelection("all");
+
+function filterSelection(category) {
+  const items = document.getElementsByClassName("portfolio-item");
+  for (let i = 0; i < items.length; i++) {
+    items[i].classList.remove("show");
+    if (category === "all" || items[i].classList.contains(category)) {
+      items[i].classList.add("show");
+    }
+  }
+
+  const buttons = document.getElementsByClassName("filter-btn");
+  for (let btn of buttons) {
+    btn.classList.remove("active");
+  }
+  event.target.classList.add("active");
+}
+</script>
+
 </body>
 </html>
-
-
