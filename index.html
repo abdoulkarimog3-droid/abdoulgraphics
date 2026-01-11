@@ -83,6 +83,10 @@
 
 <div class="grid" id="affiches-grid"></div>
 
+<button id="load-more" class="load-more-btn">
+  Voir plus
+</button>
+
 
   <!-- ===== LOGOS (vide pour l’instant) ===== -->
   <h3 class="category-title" data-aos="fade-right">🧠 Logos</h3>
@@ -491,21 +495,40 @@ function filterSelection(category) {
 </script>
 
 <script>
-const affichesGrid = document.getElementById("affiches-grid");
+  const affichesGrid = document.getElementById("affiches-grid");
+  const loadMoreBtn = document.getElementById("load-more");
 
-for (let i = 1; i <= 100; i++) {
-  const img = document.createElement("img");
+  let totalImages = 100;      // nombre total d’affiches
+  let imagesPerLoad = 12;     // combien charger à chaque clic
+  let currentIndex = 1;
 
-  img.src = `images/affiches/affiche${i}.jpg`; // chemin image
-  img.loading = "lazy";                        // ⭐ lazy loading
-  img.alt = `Affiche ${i}`;
-  img.setAttribute("data-aos", "zoom-in");
-  img.onclick = () => openPopup(img.src);
+  function loadImages() {
+    for (let i = 0; i < imagesPerLoad; i++) {
 
-  affichesGrid.appendChild(img);
-}
+      if (currentIndex > totalImages) {
+        loadMoreBtn.style.display = "none";
+        return;
+      }
+
+      const img = document.createElement("img");
+      img.src = `images/affiches/affiche${currentIndex}.jpg`;
+      img.loading = "lazy";
+      img.alt = `Affiche ${currentIndex}`;
+      img.onclick = () => openPopup(img.src);
+
+      affichesGrid.appendChild(img);
+      currentIndex++;
+    }
+  }
+
+  // Charger les premières images au démarrage
+  loadImages();
+
+  // Charger plus au clic
+  loadMoreBtn.addEventListener("click", loadImages);
 </script>
 
 </body>
 </html>
+
 
