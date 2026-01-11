@@ -491,17 +491,21 @@ function filterSelection(category) {
 </script>
 
 <script>
-  const affichesGrid = document.getElementById("affiches-grid");
+const affichesGrid = document.getElementById("affiches-grid");
 
-  for (let i = 1; i <= 100; i++) {
-    const img = document.createElement("img");
-    img.src = `images/affiches/affiche${i}.jpg`;
-    img.alt = `Affiche ${i}`;
-    img.setAttribute("data-aos", "zoom-in");
-    img.onclick = () => openPopup(img.src);
-    affichesGrid.appendChild(img);
-  }
+for (let i = 1; i <= 100; i++) {
+  const img = document.createElement("img");
+
+  img.src = `images/affiches/affiche${i}.jpg`; // chemin image
+  img.loading = "lazy";                        // ⭐ lazy loading
+  img.alt = `Affiche ${i}`;
+  img.setAttribute("data-aos", "zoom-in");
+  img.onclick = () => openPopup(img.src);
+
+  affichesGrid.appendChild(img);
+}
 </script>
 
 </body>
 </html>
+
