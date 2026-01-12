@@ -88,9 +88,13 @@
 </button>
 
  <!-- ===== LOGOS ===== -->
-<h3 class="category-title" data-aos="fade-right">💎 Logos</h3>
+<h3 class="category-title" data-aos="fade-right">💡 Logos</h3>
 
 <div class="grid" id="logos-grid"></div>
+
+<button id="load-more-logos" class="load-more-btn">
+  Voir plus
+</button>
 
   <!-- ===== RÉSEAUX SOCIAUX (vide) ===== -->
   <h3 class="category-title" data-aos="fade-right">📱 Réseaux sociaux</h3>
@@ -540,9 +544,45 @@ for (let i = 1; i <= 20; i++) { // change 20 selon ton nombre de logos
   logosGrid.appendChild(img);
 }
 </script>
- 
+
+<script>
+const logosGrid = document.getElementById("logos-grid");
+const loadMoreLogosBtn = document.getElementById("load-more-logos");
+
+let logosLoaded = 0;
+const logosPerLoad = 12; // nombre affiché à chaque clic
+const totalLogos = 53;  // 🔥 mets le nombre réel de tes logos
+
+function loadLogos() {
+  for (let i = logosLoaded + 1; i <= logosLoaded + logosPerLoad && i <= totalLogos; i++) {
+    const img = document.createElement("img");
+
+    img.src = `images/logos/logo${i}.png`;
+    img.loading = "lazy";
+    img.alt = `Logo ${i}`;
+    img.setAttribute("data-aos", "zoom-in");
+    img.onclick = () => openPopup(img.src);
+
+    logosGrid.appendChild(img);
+  }
+
+  logosLoaded += logosPerLoad;
+
+  if (logosLoaded >= totalLogos) {
+    loadMoreLogosBtn.style.display = "none";
+  }
+}
+
+// charger les premiers logos
+loadLogos();
+
+// bouton voir plus
+loadMoreLogosBtn.addEventListener("click", loadLogos);
+</script>
+  
 </body>
 </html>
+
 
 
 
