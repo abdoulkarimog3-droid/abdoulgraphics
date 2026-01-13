@@ -18,7 +18,14 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-   
+  
+  /* C'EST CETTE LIGNE QUI FORCE LE RETOUR DE LA SOURIS : */
+  cursor: auto !important; 
+}
+
+/* Force la main "cliquable" sur les boutons et liens */
+a, button, .btn, .portfolio-item, .filter-btn {
+  cursor: pointer !important;
 }
 
 body {
@@ -496,4 +503,5 @@ footer {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+
 
