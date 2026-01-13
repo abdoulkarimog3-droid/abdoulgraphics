@@ -530,21 +530,6 @@ function filterSelection(category) {
   loadMoreBtn.addEventListener("click", loadImages);
 </script>
 
- <script>
-const logosGrid = document.getElementById("logos-grid");
-
-for (let i = 1; i <= 20; i++) { // change 20 selon ton nombre de logos
-  const img = document.createElement("img");
-  img.src = `images/logos/logo${i}.png`;
-  img.loading = "lazy";
-  img.alt = `Logo ${i}`;
-  img.setAttribute("data-aos", "zoom-in");
-  img.onclick = () => openPopup(img.src);
-
-  logosGrid.appendChild(img);
-}
-</script>
-
 <script>
   const logosGrid = document.getElementById("logos-grid");
   const loadMoreLogosBtn = document.getElementById("load-more-logos");
@@ -582,6 +567,7 @@ for (let i = 1; i <= 20; i++) { // change 20 selon ton nombre de logos
   
 </body>
 </html>
+
 
 
 
