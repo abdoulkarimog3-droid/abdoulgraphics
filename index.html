@@ -11,43 +11,134 @@
 
 <body>
 
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-ring"></div>
+  <p>Chargement...</p>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="logo">ABDOUL<span>GRAPHICS</span></div>
+
   <ul class="menu">
-    <li><a href="#home">Accueil</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#home" onclick="closeMenu()">Accueil</a></li>
+    <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+    <li><a href="#about" onclick="closeMenu()">À propos</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
   </ul>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <span>☀️</span><span>🌙</span>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
   <h1>Creative Graphic Designer</h1>
   <p>Designer graphique professionnel basé à Bamako</p>
+  <a href="#portfolio" class="btn">Voir mes créations</a>
+</section>
+
+<!-- PARALLAX -->
+<section class="parallax">
+  <div class="parallax-content" data-aos="fade-up">
+    <h2>Design créatif & impactant</h2>
+    <p>Des visuels modernes qui attirent et marquent les esprits</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="stats">
+  <div class="stat" data-target="9">0<br><span>Années d’expérience</span></div>
+  <div class="stat" data-target="120">0<br><span>Projets réalisés</span></div>
+  <div class="stat" data-target="100" data-suffix="%">0<br><span>Satisfaction</span></div>
 </section>
 
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
   <h2>Portfolio</h2>
 
-  <!-- AFFICHES -->
   <h3 class="category-title">🎨 Affiches</h3>
   <div class="grid" id="affiches-grid"></div>
   <button id="load-more-affiches" class="load-more-btn">Voir plus</button>
 
-  <!-- LOGOS -->
-  <h3 class="category-title">🎨 Logos</h3>
+  <h3 class="category-title">💎 Logos</h3>
   <div class="grid" id="logos-grid"></div>
   <button id="load-more-logos" class="load-more-btn">Voir plus</button>
 </section>
 
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-container">
+    <div class="photo-wrapper">
+      <div class="photo-glow"></div>
+      <img src="images/abdoul.jpg" alt="Abdoul">
+    </div>
+
+    <div class="about-text">
+      <h2>Derrière Abdoulgraphics</h2>
+      <p>
+        Designer graphique passionné basé à Bamako.  
+        Je transforme les idées en émotions visuelles fortes.
+      </p>
+      <ul>
+        <li>✔ Respect des délais</li>
+        <li>✔ Créativité professionnelle</li>
+        <li>✔ Communication fluide</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="testimonials">
+  <h2>Ils m’ont fait confiance</h2>
+  <p class="subtitle">Plus de 10 clients satisfaits</p>
+
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+      <div class="testimonial-card"><p>“Travail exceptionnel.”</p><strong>Amadou</strong></div>
+      <div class="testimonial-card"><p>“Très professionnel.”</p><strong>Fatoumata</strong></div>
+      <div class="testimonial-card"><p>“Résultat incroyable.”</p><strong>Ibrahim</strong></div>
+      <div class="testimonial-card"><p>“Je recommande.”</p><strong>Mariam</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contactez-moi</h2>
+
+  <form action="https://formspree.io/f/XXXXXXXX" method="POST">
+    <input type="text" name="name" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <textarea name="message" placeholder="Votre message" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <p>📞 WhatsApp : <a href="https://wa.me/22379185898">79185898</a></p>
+
+  <div class="socials">
+    <a href="https://www.facebook.com/share/1DEU6rAwmM/">Facebook</a>
+    <a href="https://www.instagram.com/abdoulgraphics23">Instagram</a>
+    <a href="https://www.tiktok.com/@abdoulgraphics">TikTok</a>
+  </div>
+</section>
+
 <!-- POPUP -->
-<div id="popup" onclick="this.style.display='none'">
+<div id="popup" onclick="closePopup()">
   <img id="popup-img">
 </div>
 
+<!-- JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
 
@@ -56,62 +147,81 @@ function openPopup(src) {
   document.getElementById("popup").style.display = "flex";
   document.getElementById("popup-img").src = src;
 }
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
 </script>
 
-<!-- ================= AFFICHES SCRIPT ================= -->
+<!-- AFFICHES -->
 <script>
-const affichesGrid = document.getElementById("affiches-grid");
-const btnAffiches = document.getElementById("load-more-affiches");
-
-let afficheIndex = 1;
-const afficheTotal = 100;
-const affichePerLoad = 12;
+let aIndex = 1;
+const aTotal = 100;
+const aPerLoad = 12;
+const aGrid = document.getElementById("affiches-grid");
+const aBtn = document.getElementById("load-more-affiches");
 
 function loadAffiches() {
-  for (let i = 0; i < affichePerLoad; i++) {
-    if (afficheIndex > afficheTotal) {
-      btnAffiches.style.display = "none";
-      return;
-    }
+  for (let i = 0; i < aPerLoad && aIndex <= aTotal; i++) {
     const img = document.createElement("img");
-    img.src = `images/affiches/affiche${afficheIndex}.jpg`;
+    img.src = `images/affiches/affiche${aIndex}.jpg`;
     img.loading = "lazy";
     img.onclick = () => openPopup(img.src);
-    affichesGrid.appendChild(img);
-    afficheIndex++;
+    aGrid.appendChild(img);
+    aIndex++;
   }
+  if (aIndex > aTotal) aBtn.style.display = "none";
 }
-
 loadAffiches();
-btnAffiches.addEventListener("click", loadAffiches);
+aBtn.onclick = loadAffiches;
 </script>
 
-<!-- ================= LOGOS SCRIPT (CORRIGÉ) ================= -->
+<!-- LOGOS -->
 <script>
-const logosGrid = document.getElementById("logos-grid");
-const btnLogos = document.getElementById("load-more-logos");
-
-let logoIndex = 1;
-const logoTotal = 53;
-const logoPerLoad = 12;
+let lIndex = 1;
+const lTotal = 53;
+const lPerLoad = 12;
+const lGrid = document.getElementById("logos-grid");
+const lBtn = document.getElementById("load-more-logos");
 
 function loadLogos() {
-  for (let i = 0; i < logoPerLoad; i++) {
-    if (logoIndex > logoTotal) {
-      btnLogos.style.display = "none";
-      return;
-    }
+  for (let i = 0; i < lPerLoad && lIndex <= lTotal; i++) {
     const img = document.createElement("img");
-    img.src = `images/logos/logo${logoIndex}.png`;
+    img.src = `images/logos/logo${lIndex}.png`;
     img.loading = "lazy";
     img.onclick = () => openPopup(img.src);
-    logosGrid.appendChild(img);
-    logoIndex++;
+    lGrid.appendChild(img);
+    lIndex++;
   }
+  if (lIndex > lTotal) lBtn.style.display = "none";
 }
-
 loadLogos();
-btnLogos.addEventListener("click", loadLogos);
+lBtn.onclick = loadLogos;
+</script>
+
+<!-- LOADER -->
+<script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+  setTimeout(() => loader.style.display = "none", 500);
+});
+</script>
+
+<!-- MENU -->
+<script>
+function toggleMenu() {
+  document.querySelector(".menu").classList.toggle("active");
+}
+function closeMenu() {
+  document.querySelector(".menu").classList.remove("active");
+}
+</script>
+
+<!-- THEME -->
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
 </script>
 
 </body>
