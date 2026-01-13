@@ -5,12 +5,11 @@
   <title>Abdoulgraphics | Graphic Designer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
+<body>
 
 <!-- LOADER -->
 <div id="loader">
@@ -18,559 +17,134 @@
   <p>Chargement...</p>
 </div>
 
-<!-- SCROLL PROGRESS BAR -->
+<!-- SCROLL PROGRESS -->
 <div id="scroll-progress"></div>
-
-<body>
 
 <!-- NAV -->
 <nav class="nav">
   <div class="logo">ABDOUL<span>GRAPHICS</span></div>
 
   <ul class="menu">
-    <li><a href="#home" onclick="closeMenu()">Accueil</a></li>
-    <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
-    <li><a href="#about" onclick="closeMenu()">À propos</a></li>
-    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    <li><a href="#home">Accueil</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <!-- HAMBURGER -->
   <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </div>
-
-<!-- DARK / LIGHT SWITCH -->
-<div class="theme-toggle" onclick="toggleTheme()">
-  <span class="sun">☀️</span>
-  <span class="moon">🌙</span>
-</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <h1></h1>
+  <h1>Creative Graphic Designer</h1>
   <p>Designer graphique professionnel basé à Bamako</p>
   <a href="#portfolio" class="btn">Voir mes créations</a>
 </section>
 
-<!-- PARALLAX SECTION -->
-<section class="parallax">
-  <div class="parallax-content" data-aos="fade-up">
-    <h2>Design créatif & impactant</h2>
-    <p>Des visuels modernes qui attirent et marquent les esprits</p>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="stats scroll-3d" id="stats">
-  <div class="stat" data-target="9">0<br><span>Années d’expérience</span></div>
-  <div class="stat" data-target="120">0<br><span>Projets réalisés</span></div>
-  <div class="stat" data-target="100" data-suffix="%">0<br><span>Satisfaction client</span></div>
-</section>
-
-
-<!-- =========================
-     PORTFOLIO
-========================= -->
+<!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
-
   <h2 data-aos="fade-up">Portfolio</h2>
 
-<!-- ===== AFFICHES ===== -->
-<h3 class="category-title" data-aos="fade-right">🎨 Affiches</h3>
+  <!-- AFFICHES -->
+  <h3 class="category-title">🎨 Affiches</h3>
+  <div class="grid" id="affiches-grid"></div>
+  <button id="load-more-affiches" class="load-more-btn">Voir plus</button>
 
-<div class="grid" id="affiches-grid"></div>
-
-<button id="load-more" class="load-more-btn">
-  Voir plus
-</button>
-
-<h3 class="category-title" data-aos="fade-right">🎨 Logos</h3>
-
-<div class="grid" id="logos-grid"></div>
-
-<button id="load-more-logos" class="load-more-btn">
-  Voir plus
-</button>
-
-
-  <!-- ===== RÉSEAUX SOCIAUX (vide) ===== -->
-  <h3 class="category-title" data-aos="fade-right">📱 Réseaux sociaux</h3>
-  <div class="grid">
-    <!-- images/reseaux/rs1.jpg -->
-  </div>
-
-</section>
-
-  </div>
+  <!-- LOGOS -->
+  <h3 class="category-title">💎 Logos</h3>
+  <div class="grid" id="logos-grid"></div>
+  <button id="load-more-logos" class="load-more-btn">Voir plus</button>
 </section>
 
 <!-- ABOUT -->
-<section class="about scroll-3d" id="about">
+<section class="about" id="about">
   <div class="about-container">
-
-    <div class="photo-wrapper" data-aos="zoom-in">
-      <div class="photo-glow"></div>
-      <img src="./images/abdoul.jpg" alt="Abdoul Graphic Designer">
-    </div>
-
-    <div class="about-text" data-aos="fade-left">
+    <img src="images/abdoul.jpg" alt="Abdoul">
+    <div>
       <h2>Derrière Abdoulgraphics</h2>
-      <p>
-        Je suis Abdoul, designer graphique passionné basé à Bamako.
-        Je transforme vos idées en émotions visuelles à fort impact.
-      </p>
-
-      <ul>
-        <li>✔ Respect strict des délais</li>
-        <li>✔ Créativité professionnelle</li>
-        <li>✔ Communication fluide</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     TEMOIGNAGES SLIDER
-========================= -->
-<section class="testimonials scroll-3d" id="temoignages">
-  <h2 data-aos="fade-up">Ils m’ont fait confiance</h2>
-  <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
-    Plus de 10 clients satisfaits
-  </p>
-
-  <div class="testimonial-slider">
-
-    <div class="testimonial-track">
-
-      <!-- CARD -->
-      <div class="testimonial-card">
-        <p>“Travail exceptionnel, rapide et très créatif. Je recommande fortement.”</p>
-        <strong>Amadou Traoré</strong>
-        <span>Bamako</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Excellent sens du détail et très professionnel.”</p>
-        <strong>Fatoumata Koné</strong>
-        <span>Entrepreneure</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Le branding réalisé a totalement changé notre image.”</p>
-        <strong>Ibrahim Diallo</strong>
-        <span>Startup</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Créatif, à l’écoute et toujours dans les délais.”</p>
-        <strong>Mariam Coulibaly</strong>
-        <span>Marque personnelle</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Design moderne et communication fluide.”</p>
-        <strong>Oumar Keita</strong>
-        <span>Entreprise</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Résultat au-dessus de nos attentes.”</p>
-        <strong>Abdoulaye Sangaré</strong>
-        <span>Agence</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Un vrai professionnel du graphisme.”</p>
-        <strong>Aïssata Traoré</strong>
-        <span>Community Manager</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Je recommande à 100 %, travail sérieux.”</p>
-        <strong>Moussa Diarra</strong>
-        <span>Commerçant</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Créativité + rapidité = parfait.”</p>
-        <strong>Salimata Maïga</strong>
-        <span>ONG</span>
-      </div>
-
-      <div class="testimonial-card">
-        <p>“Très bonne collaboration du début à la fin.”</p>
-        <strong>Seydou Touré</strong>
-        <span>Freelance</span>
-      </div>
-
+      <p>Designer graphique passionné, spécialisé en branding, affiches et logos.</p>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact scroll-3d" id="contact">
-  <h2>Contactez-moi</h2>
+<section class="contact" id="contact">
+  <h2>Contact</h2>
 
-  <!-- 🔴 REMPLACE XXXXXXXX PAR TON ID FORMSPREE -->
   <form action="https://formspree.io/f/XXXXXXXX" method="POST">
     <input type="text" name="name" placeholder="Votre nom" required>
     <input type="email" name="email" placeholder="Votre email" required>
     <textarea name="message" placeholder="Votre message" required></textarea>
-    <button type="submit">Envoyer le message</button>
+    <button type="submit">Envoyer</button>
   </form>
-
-  <p class="direct">
-    📞 WhatsApp :
-    <a href="https://wa.me/22379185898" target="_blank">79185898</a>
-  </p>
-
-  <div class="socials">
-    <a href="https://www.facebook.com/share/1DEU6rAwmM/?mibextid=wwXIfr" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/abdoulgraphics23" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@abdoulgraphics" target="_blank">TikTok</a>
-  </div>
 </section>
 
-<!-- POPUP IMAGE -->
-<div id="popup" onclick="closePopup()">
-  <img id="popup-img" alt="Image projet">
+<!-- POPUP -->
+<div id="popup" onclick="this.style.display='none'">
+  <img id="popup-img">
 </div>
 
-<!-- JS -->
+<!-- JS LIB -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 
+<!-- AFFICHES SCRIPT -->
 <script>
-AOS.init({ duration: 1000, once: true });
+const affichesGrid = document.getElementById("affiches-grid");
+const loadAffichesBtn = document.getElementById("load-more-affiches");
 
+let afficheIndex = 1;
+const affichesPerLoad = 12;
+const affichesTotal = 100;
+
+function loadAffiches() {
+  for (let i = 0; i < affichesPerLoad && afficheIndex <= affichesTotal; i++) {
+    const img = document.createElement("img");
+    img.src = `images/affiches/affiche${afficheIndex}.jpg`;
+    img.loading = "lazy";
+    img.onclick = () => openPopup(img.src);
+    affichesGrid.appendChild(img);
+    afficheIndex++;
+  }
+  if (afficheIndex > affichesTotal) loadAffichesBtn.style.display = "none";
+}
+loadAffiches();
+loadAffichesBtn.onclick = loadAffiches;
+</script>
+
+<!-- LOGOS SCRIPT -->
+<script>
+const logosGrid = document.getElementById("logos-grid");
+const loadLogosBtn = document.getElementById("load-more-logos");
+
+let logoIndex = 1;
+const logosPerLoad = 12;
+const logosTotal = 53;
+
+function loadLogos() {
+  for (let i = 0; i < logosPerLoad && logoIndex <= logosTotal; i++) {
+    const img = document.createElement("img");
+    img.src = `images/logos/logo${logoIndex}.png`;
+    img.loading = "lazy";
+    img.onclick = () => openPopup(img.src);
+    logosGrid.appendChild(img);
+    logoIndex++;
+  }
+  if (logoIndex > logosTotal) loadLogosBtn.style.display = "none";
+}
+loadLogos();
+loadLogosBtn.onclick = loadLogos;
+</script>
+
+<!-- POPUP -->
+<script>
 function openPopup(src) {
-  const popup = document.getElementById("popup");
-  const img = document.getElementById("popup-img");
-  popup.style.display = "flex";
-  img.src = src;
-}
-
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-}
-
-/* TEXTE TAPÉ */
-const text = "Creative Graphic Designer";
-let i = 0;
-const speed = 80;
-const el = document.querySelector(".hero h1");
-
-if (el) {
-  el.textContent = "";
-  function typeEffect() {
-    if (i < text.length) {
-      el.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeEffect, speed);
-    }
-  }
-  typeEffect();
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("popup-img").src = src;
 }
 </script>
 
-<script>
-/* SCROLL 3D (désactivé sur mobile) */
-if (window.innerWidth > 768) {
-  window.addEventListener("scroll", () => {
-    document.querySelectorAll(".scroll-3d").forEach(section => {
-      const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        const progress = (windowHeight - rect.top) / windowHeight;
-        const rotateX = (1 - progress) * 10;
-        const translateZ = progress * 30;
-
-        section.style.transform = `
-          perspective(1200px)
-          rotateX(${rotateX}deg)
-          translateZ(${translateZ}px)
-        `;
-      }
-    });
-  });
-}
-</script>
-<script>
-function toggleMenu() {
-  document.querySelector(".menu").classList.toggle("active");
-  document.querySelector(".hamburger").classList.toggle("active");
-}
-
-function closeMenu() {
-  document.querySelector(".menu").classList.remove("active");
-  document.querySelector(".hamburger").classList.remove("active");
-}
-</script>
-
-<script>
-const counters = document.querySelectorAll('.stat');
-let countersStarted = false;
-
-function startCounters() {
-  counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    const suffix = counter.getAttribute('data-suffix') || '';
-    let count = 0;
-    const speed = target / 60;
-
-    const update = () => {
-      count += speed;
-      if (count < target) {
-        counter.firstChild.nodeValue = Math.ceil(count) + suffix;
-        requestAnimationFrame(update);
-      } else {
-        counter.firstChild.nodeValue = target + suffix;
-      }
-    };
-    update();
-  });
-}
-
-window.addEventListener('scroll', () => {
-  const statsSection = document.getElementById('stats');
-  const rect = statsSection.getBoundingClientRect();
-
-  if (!countersStarted && rect.top < window.innerHeight) {
-    countersStarted = true;
-    startCounters();
-  }
-});
-</script>
-
-<script>
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  loader.style.opacity = "0";
-  loader.style.pointerEvents = "none";
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 500);
-});
-</script>
-
-<script>
-window.addEventListener("scroll", () => {
-  const scrollProgress = document.getElementById("scroll-progress");
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = (scrollTop / docHeight) * 100;
-
-  scrollProgress.style.width = scrolled + "%";
-});
-</script>
-
-<script>
-window.addEventListener("scroll", () => {
-  const parallax = document.querySelector(".parallax");
-  if (!parallax) return;
-
-  const offset = window.pageYOffset;
-  parallax.style.backgroundPositionY = offset * 0.4 + "px";
-});
-</script>
-
-<script>
-function toggleTheme() {
-  document.body.classList.toggle("light");
-  const isLight = document.body.classList.contains("light");
-  localStorage.setItem("theme", isLight ? "light" : "dark");
-}
-
-/* Charger le thème sauvegardé */
-(function () {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
-    document.body.classList.add("light");
-  }
-})();
-</script>
-
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll(".testimonial-slide");
-const dots = document.querySelectorAll(".dot");
-
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  dots.forEach(dot => dot.classList.remove("active"));
-
-  slides[index].classList.add("active");
-  dots[index].classList.add("active");
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
-
-// AUTO SLIDE
-setInterval(nextSlide, 5000);
-
-// CLICK DOTS
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentSlide = index;
-    showSlide(currentSlide);
-  });
-});
-</script>
-
-<!-- =========================
-     FOOTER
-========================= -->
-<footer class="footer">
-
-  <div class="footer-container">
-
-    <!-- COL 1 -->
-    <div class="footer-brand">
-      <h3>ABDOUL<span>GRAPHICS</span></h3>
-      <p>
-        Designer graphique professionnel basé à Bamako.  
-        Je crée des identités visuelles modernes, puissantes et mémorables.
-      </p>
-
-      <div class="footer-socials">
-        <a href="https://www.facebook.com/share/1DEU6rAwmM/?mibextid=wwXIfr" target="_blank">Fb</a>
-        <a href="https://www.instagram.com/abdoulgraphics23" target="_blank">Ig</a>
-        <a href="https://www.tiktok.com/@abdoulgraphics" target="_blank">Tk</a>
-      </div>
-    </div>
-
-    <!-- COL 2 -->
-    <div class="footer-links">
-      <h4>Explorer</h4>
-      <ul>
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- COL 3 -->
-    <div class="footer-news">
-      <h4>Conseils & Actualités</h4>
-      <ul>
-        <li>Pourquoi le design minimaliste domine</li>
-        <li>Dark mode vs Light mode</li>
-        <li>L’impact émotionnel du graphisme</li>
-        <li>Comment un bon visuel vend plus</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2026 Abdoulgraphics — Tous droits réservés
-  </div>
-
-</footer>
-
-<script>
-filterSelection("all");
-
-function filterSelection(category) {
-  const items = document.getElementsByClassName("portfolio-item");
-  for (let i = 0; i < items.length; i++) {
-    items[i].classList.remove("show");
-    if (category === "all" || items[i].classList.contains(category)) {
-      items[i].classList.add("show");
-    }
-  }
-
-  const buttons = document.getElementsByClassName("filter-btn");
-  for (let btn of buttons) {
-    btn.classList.remove("active");
-  }
-  event.target.classList.add("active");
-}
-</script>
-
-<script>
-  const affichesGrid = document.getElementById("affiches-grid");
-  const loadMoreBtn = document.getElementById("load-more");
-
-  let totalImages = 100;      // nombre total d’affiches
-  let imagesPerLoad = 12;     // combien charger à chaque clic
-  let currentIndex = 1;
-
-  function loadImages() {
-    for (let i = 0; i < imagesPerLoad; i++) {
-
-      if (currentIndex > totalImages) {
-        loadMoreBtn.style.display = "none";
-        return;
-      }
-
-      const img = document.createElement("img");
-      img.src = `images/affiches/affiche${currentIndex}.jpg`;
-      img.loading = "lazy";
-      img.alt = `Affiche ${currentIndex}`;
-      img.onclick = () => openPopup(img.src);
-
-      affichesGrid.appendChild(img);
-      currentIndex++;
-    }
-  }
-
-  // Charger les premières images au démarrage
-  loadImages();
-
-  // Charger plus au clic
-  loadMoreBtn.addEventListener("click", loadImages);
-</script>
-
-<script>
-  const logosGrid = document.getElementById("logos-grid");
-  const loadMoreLogosBtn = document.getElementById("load-more-logos");
-
-  let logosIndex = 0;
-  const logosPerLoad = 12;
-  const logosTotal = 53; // mets le nombre exact de logos
-
-  function loadMoreLogos() {
-    const end = logosIndex + logosPerLoad;
-
-    for (let i = logosIndex + 1; i <= end && i <= logosTotal; i++) {
-      const img = document.createElement("img");
-
-      img.src = `images/logos/logo${i}.png`;
-      img.loading = "lazy";
-      img.alt = `Logo ${i}`;
-      img.onclick = () => openPopup(img.src);
-
-      logosGrid.appendChild(img);
-    }
-
-    logosIndex = end;
-
-    if (logosIndex >= logosTotal) {
-      loadMoreLogosBtn.style.display = "none";
-    }
-  }
-
-  // Charger les 12 premiers logos
-  loadMoreLogos();
-
-  loadMoreLogosBtn.addEventListener("click", loadMoreLogos);
-</script>
-  
 </body>
 </html>
-
-
-
-
-
-
-
