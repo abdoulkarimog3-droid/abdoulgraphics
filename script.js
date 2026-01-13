@@ -1,56 +1,97 @@
 /* =========================
-   CONFIGURATION DES IMAGES
+   1. CONFIGURATION
 ========================= */
-// Change ces chiffres si tu ajoutes d'autres images plus tard
-const NOMBRE_DE_LOGOS = 53;    // Tu as logo1.png jusqu'à logo53.png
-const NOMBRE_DAFFICHES = 100;  // Tu as affiche1.jpg jusqu'à affiche100.jpg
+const NOMBRE_DE_LOGOS = 53;    
+const NOMBRE_DAFFICHES = 100;  
 
 /* =========================
-   GENERATION AUTOMATIQUE DU PORTFOLIO
+   2. FONCTIONS DU ZOOM (LIGHTBOX)
+   (On les met au début pour être sûr qu'elles chargent)
+========================= */
+function ouvrirLightbox(sourceImage) {
+    const box = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    
+    if(box && img) {
+        img.src = sourceImage; // Met l'image dans la boite
+        box.classList.add('active'); // Affiche la boite
+        box.style.display = "flex"; // Force l'affichage en flex
+    } else {
+        console.error("Erreur: La boite #lightbox n'existe pas dans le HTML");
+    }
+}
+
+function fermerLightbox() {
+    const box = document.getElementById('lightbox');
+    if(box) {
+        box.classList.remove('active');
+        box.style.display = "none";
+    }
+}
+
+/* =========================
+   3. GENERATION DU PORTFOLIO
 ========================= */
 const grid = document.querySelector('.portfolio-grid');
 
 function chargerPortfolio() {
-    // 1. Générer les LOGOS
+    if (!grid) return; // Sécurité si la grille n'existe pas
+
+    // --- GENERER LES LOGOS ---
     for (let i = 1; i <= NOMBRE_DE_LOGOS; i++) {
         const item = document.createElement('div');
         item.classList.add('portfolio-item');
         item.setAttribute('data-category', 'logo');
         
-        // On crée le HTML pour chaque logo
+        // On définit le lien de l'image
+        const imageSrc = `images/logos/logo${i}.png`;
+
         item.innerHTML = `
-            <img src="images/logos/logo${i}.png" alt="Logo ${i}" loading="lazy">
+            <img src="${imageSrc}" alt="Logo ${i}" loading="lazy">
             <div class="overlay">
                 <h3>Logo N°${i}</h3>
                 <p>Design de marque</p>
             </div>
         `;
+        
+        // L'ACTION DE CLIC EST AJOUTÉE DIRECTEMENT ICI
+        item.onclick = function() {
+            ouvrirLightbox(imageSrc);
+        };
+
         grid.appendChild(item);
     }
 
-    // 2. Générer les AFFICHES
+    // --- GENERER LES AFFICHES ---
     for (let i = 1; i <= NOMBRE_DAFFICHES; i++) {
         const item = document.createElement('div');
         item.classList.add('portfolio-item');
         item.setAttribute('data-category', 'affiche');
         
-        // On crée le HTML pour chaque affiche
+        // On définit le lien de l'image (Attention au .jpg ou .jpeg)
+        const imageSrc = `images/affiches/affiche${i}.jpg`;
+
         item.innerHTML = `
-            <img src="images/affiches/affiche${i}.jpg" alt="Affiche ${i}" loading="lazy">
+            <img src="${imageSrc}" alt="Affiche ${i}" loading="lazy">
             <div class="overlay">
                 <h3>Affiche N°${i}</h3>
                 <p>Publicité & Event</p>
             </div>
         `;
+
+        // L'ACTION DE CLIC EST AJOUTÉE DIRECTEMENT ICI
+        item.onclick = function() {
+            ouvrirLightbox(imageSrc);
+        };
+
         grid.appendChild(item);
     }
 
-    // Une fois les images créées, on active le système de filtres
     activerFiltres();
 }
 
 /* =========================
-   SYSTEME DE FILTRES
+   4. FILTRES & MENU & SCROLL
 ========================= */
 function activerFiltres() {
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -58,32 +99,21 @@ function activerFiltres() {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Gestion de la classe active sur les boutons
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
             const filterValue = btn.getAttribute('data-filter');
 
             portfolioItems.forEach(item => {
                 if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                     item.style.display = 'block';
-                    setTimeout(() => item.style.opacity = '1', 50);
                 } else {
                     item.style.display = 'none';
-                    item.style.opacity = '0';
                 }
             });
         });
     });
 }
 
-// On lance le chargement au démarrage
-document.addEventListener('DOMContentLoaded', chargerPortfolio);
-
-
-/* =========================
-   SCROLL BAR
-========================= */
 window.onscroll = function() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -92,56 +122,12 @@ window.onscroll = function() {
   if(bar) bar.style.width = scrolled + "%";
 };
 
-/* =========================
-   MENU MOBILE
-========================= */
 function toggleMenu() {
-  const menu = document.querySelector(".menu");
-  menu.classList.toggle("active");
+  document.querySelector(".menu").classList.toggle("active");
 }
 function closeMenu() {
   document.querySelector(".menu").classList.remove("active");
 }
 
-/* =========================
-   CURSEUR (Optionnel)
-========================= */
-const cursor = document.querySelector('.cursor');
-const cursor2 = document.querySelector('.cursor2');
-
-if(cursor && cursor2) {
-    document.addEventListener('mousemove', function(e){
-        cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-    });
-}
-/* =========================
-   GESTION DU ZOOM (LIGHTBOX)
-========================= */
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-
-// 1. Fonction pour ouvrir l'image
-function ouvrirLightbox(src) {
-    lightbox.classList.add('active');
-    lightboxImg.src = src;
-}
-
-// 2. Fonction pour fermer quand on clique n'importe où
-function fermerLightbox() {
-    lightbox.classList.remove('active');
-}
-
-// 3. Détecteur de clic intelligent (Event Delegation)
-// On écoute les clics sur toute la grille, car les images sont créées dynamiquement
-document.querySelector('.portfolio-grid').addEventListener('click', function(e) {
-    // On cherche si le clic a touché une "portfolio-item" ou un de ses enfants
-    const item = e.target.closest('.portfolio-item');
-    
-    if (item) {
-        // Si oui, on trouve l'image à l'intérieur de cet item
-        const img = item.querySelector('img');
-        if (img) {
-            ouvrirLightbox(img.src);
-        }
-    }
-});
+// Lancement au chargement de la page
+document.addEventListener('DOMContentLoaded', chargerPortfolio);
