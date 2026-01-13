@@ -2,189 +2,231 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Abdoulgraphics | Graphic Designer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="style.css">
+  <title>Abdoulgraphics | Designer Graphique Bamako</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="loader-ring"></div>
-  <p>Chargement...</p>
-</div>
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
 
-<!-- SCROLL PROGRESS -->
-<div id="scroll-progress"></div>
+  <div id="scroll-progress"></div>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="logo">ABDOUL<span>GRAPHICS</span></div>
-
-  <ul class="menu">
-    <li><a href="#home" onclick="closeMenu()">Accueil</a></li>
-    <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
-    <li><a href="#about" onclick="closeMenu()">À propos</a></li>
-    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-  </ul>
-
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
-
-  <div class="theme-toggle" onclick="toggleTheme()">
-    <span>☀️</span><span>🌙</span>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <h1 class="hero-title">Creative Graphic Designer</h1>
-  <p data-aos="fade-up" data-aos-delay="200">
-    Designer graphique professionnel basé à Bamako
-  </p>
-  <a href="#portfolio" class="btn" data-aos="zoom-in" data-aos-delay="400">
-    Voir mes créations
+  <a href="https://wa.me/22379185898" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
   </a>
-</section>
 
-<!-- PARALLAX -->
-<section class="parallax">
-  <div class="parallax-content" data-aos="fade-up">
-    <h2>Design créatif & impactant</h2>
-    <p>Des visuels modernes qui attirent et marquent les esprits</p>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="stats" id="stats">
-  <div class="stat" data-target="9">0<br><span>Années d’expérience</span></div>
-  <div class="stat" data-target="120">0<br><span>Projets réalisés</span></div>
-  <div class="stat" data-target="100" data-suffix="%">0<br><span>Satisfaction</span></div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="portfolio" id="portfolio">
-  <h2 data-aos="fade-up">Portfolio</h2>
-
-  <h3 class="category-title" data-aos="fade-right">🎨 Affiches</h3>
-  <div class="grid" id="affiches-grid"></div>
-  <button id="load-more-affiches" class="load-more-btn">Voir plus</button>
-
-  <h3 class="category-title" data-aos="fade-right">💎 Logos</h3>
-  <div class="grid" id="logos-grid"></div>
-  <button id="load-more-logos" class="load-more-btn">Voir plus</button>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-container">
-
-    <div class="photo-wrapper" data-aos="zoom-in">
-      <div class="photo-glow"></div>
-      <img src="images/abdoul.jpg" alt="Abdoul">
+  <nav class="nav">
+    <div class="logo">ABDOUL<span>GRAPHICS</span></div>
+    <ul class="menu">
+      <li><a href="#home" onclick="closeMenu()">Accueil</a></li>
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+      <li><a href="#about" onclick="closeMenu()">À propos</a></li>
+      <li><a href="#contact" class="btn-nav" onclick="closeMenu()">Me contacter</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
+  </nav>
 
-    <div class="about-text" data-aos="fade-left">
-      <h2>Derrière Abdoulgraphics</h2>
-      <p>
-        Designer graphique passionné basé à Bamako.  
-        Je transforme les idées en émotions visuelles fortes.
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="badge" data-aos="fade-down">Bienvenue chez AbdoulGraphics</span>
+      <h1 class="hero-title">Je donne vie à <br>vos <span>idées visuelles</span></h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Designer graphique professionnel basé à Bamako. Spécialiste en identité visuelle, logos et design publicitaire.
       </p>
-      <ul>
-        <li>✔ Respect des délais</li>
-        <li>✔ Créativité professionnelle</li>
-        <li>✔ Communication fluide</li>
-      </ul>
+      <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
+        <a href="#portfolio" class="btn btn-primary">Mon Portfolio <i class="fas fa-arrow-right"></i></a>
+        <a href="#contact" class="btn btn-secondary">Demander un devis</a>
+      </div>
+    </div>
+    
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </section>
+
+  <section class="stats" id="stats">
+    <div class="stat-box" data-aos="fade-up">
+      <i class="fas fa-calendar-check"></i>
+      <h3>+9 Ans</h3>
+      <p>d’Expérience</p>
+    </div>
+    <div class="stat-box" data-aos="fade-up" data-aos-delay="100">
+      <i class="fas fa-layer-group"></i>
+      <h3>+120</h3>
+      <p>Projets Réalisés</p>
+    </div>
+    <div class="stat-box" data-aos="fade-up" data-aos-delay="200">
+      <i class="fas fa-smile"></i>
+      <h3>100%</h3>
+      <p>Satisfaction Client</p>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2 class="section-title" data-aos="fade-up">Mes Services</h2>
+    <p class="section-subtitle" data-aos="fade-up">Ce que je peux faire pour vous</p>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="zoom-in">
+        <div class="icon-box"><i class="fas fa-pen-nib"></i></div>
+        <h3>Création de Logo</h3>
+        <p>Conception de logos uniques et mémorables qui reflètent l'identité de votre marque.</p>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
+        <h3>Affiches Publicitaires</h3>
+        <p>Design de flyers, posters et bannières pour vos événements et campagnes marketing.</p>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-box"><i class="fas fa-video"></i></div>
+        <h3>Motion Design</h3>
+        <p>Animation de logos et vidéos courtes pour dynamiser vos réseaux sociaux.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <h2 class="section-title" data-aos="fade-up">Mon Portfolio</h2>
+    
+    <div class="portfolio-filters" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="logo">Logos</button>
+      <button class="filter-btn" data-filter="affiche">Affiches</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
     </div>
 
-  </div>
-</section>
-
-<!-- TEMOIGNAGES -->
-<section class="testimonials">
-  <h2 data-aos="fade-up">Ils m’ont fait confiance</h2>
-  <p class="subtitle" data-aos="fade-up" data-aos-delay="150">
-    Plus de 10 clients satisfaits
-  </p>
-
-  <div class="testimonial-slider">
-    <div class="testimonial-track">
-      <div class="testimonial-card"><p>“Travail exceptionnel.”</p><strong>Amadou</strong></div>
-      <div class="testimonial-card"><p>“Très professionnel.”</p><strong>Fatoumata</strong></div>
-      <div class="testimonial-card"><p>“Résultat incroyable.”</p><strong>Ibrahim</strong></div>
-      <div class="testimonial-card"><p>“Je recommande.”</p><strong>Mariam</strong></div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-category="logo">
+        <img src="https://placehold.co/600x400/001f54/FFF?text=Logo+APTECH" alt="Projet 1">
+        <div class="overlay">
+          <h3>Logo Aptech Mali</h3>
+          <p>Identité Visuelle</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-category="affiche">
+        <img src="https://placehold.co/600x800/0a1a3a/FFF?text=Affiche+Event" alt="Projet 2">
+        <div class="overlay">
+          <h3>Campagne New Year</h3>
+          <p>Publicité</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-category="logo">
+        <img src="https://placehold.co/600x400/0066ff/FFF?text=Logo+DS+Service" alt="Projet 3">
+        <div class="overlay">
+          <h3>DS Service</h3>
+          <p>E-commerce Logo</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-category="branding">
+        <img src="https://placehold.co/600x600/00b4ff/FFF?text=Branding+Kit" alt="Projet 4">
+        <div class="overlay">
+          <h3>Groupe Presta</h3>
+          <p>Corporate Branding</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-category="affiche">
+        <img src="https://placehold.co/600x800/111/FFF?text=Flyer+Design" alt="Projet 5">
+        <div class="overlay">
+          <h3>Flyer Concert</h3>
+          <p>Print Design</p>
+        </div>
+      </div>
+       <div class="portfolio-item" data-category="branding">
+        <img src="https://placehold.co/600x400/222/FFF?text=Carte+Visite" alt="Projet 6">
+        <div class="overlay">
+          <h3>Carte de Visite</h3>
+          <p>Papeterie</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2 data-aos="fade-up">Contactez-moi</h2>
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <div class="contact-info" data-aos="fade-right">
+        <h2>Discutons de votre projet</h2>
+        <p>Prêt à faire passer votre communication au niveau supérieur ?</p>
+        
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <span>Téléphone / WhatsApp</span>
+            <p>+223 79 18 58 98</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <span>Email</span>
+            <p>contact@abdoulgraphics.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <span>Adresse</span>
+            <p>Bamako, Mali</p>
+          </div>
+        </div>
 
-  <form action="https://formspree.io/f/XXXXXXXX" method="POST" data-aos="fade-up">
-    <input type="text" name="name" placeholder="Votre nom" required>
-    <input type="email" name="email" placeholder="Votre email" required>
-    <textarea name="message" placeholder="Votre message" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/1DEU6rAwmM/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/abdoulgraphics23"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@abdoulgraphics"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
 
-  <p class="direct">
-    📞 WhatsApp :
-    <a href="https://wa.me/22379185898">79185898</a>
-  </p>
+      <form class="contact-form" action="https://formspree.io/f/XXXXXXXX" method="POST" data-aos="fade-left">
+        <h3>Envoyer un message</h3>
+        <div class="input-group">
+          <input type="text" name="name" required>
+          <label>Votre Nom</label>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Votre Email</label>
+        </div>
+        <div class="input-group">
+          <textarea name="message" required></textarea>
+          <label>Votre Message</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </section>
 
-  <div class="socials">
-    <a href="https://www.facebook.com/share/1DEU6rAwmM/">Facebook</a>
-    <a href="https://www.instagram.com/abdoulgraphics23">Instagram</a>
-    <a href="https://www.tiktok.com/@abdoulgraphics">TikTok</a>
-  </div>
-</section>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 AbdoulGraphics. Tous droits réservés.</p>
+      <p>Fait avec <i class="fas fa-heart" style="color:red;"></i> à Bamako.</p>
+    </div>
+  </footer>
 
-<!-- POPUP -->
-<div id="popup" onclick="closePopup()">
-  <img id="popup-img">
-</div>
-
-<!-- JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
-
-<script>
-function openPopup(src) {
-  document.getElementById("popup").style.display = "flex";
-  document.getElementById("popup-img").src = src;
-}
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-}
-</script>
-
-<script>
-function toggleMenu() {
-  document.querySelector(".menu").classList.toggle("active");
-}
-function closeMenu() {
-  document.querySelector(".menu").classList.remove("active");
-}
-</script>
-
-<script>
-function toggleTheme() {
-  document.body.classList.toggle("light");
-}
-</script>
-
-<script>
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  loader.style.opacity = "0";
-  setTimeout(() => loader.style.display = "none", 500);
-});
-</script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+  
+  <script src="script.js"></script>
 </body>
 </html>
