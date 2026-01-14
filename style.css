@@ -503,5 +503,95 @@ footer {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+/* =========================
+   SECTION À PROPOS (FIX PHOTO)
+========================= */
+.about {
+    padding: 100px 8%;
+    background: #010a24; /* Fond légèrement différent pour séparer */
+}
+
+/* Conteneur principal qui aligne photo et texte */
+.about-container {
+  display: flex;
+  align-items: center; /* Centre verticalement */
+  justify-content: center;
+  gap: 70px; /* Espace entre la photo et le texte */
+  flex-wrap: wrap; /* Permet de passer à la ligne sur petits écrans */
+}
+
+/* Le cadre de la photo */
+.photo-wrapper {
+  position: relative;
+  width: 350px;       /* LARGEUR FIXE SUR PC */
+  height: 400px;      /* HAUTEUR FIXE SUR PC */
+  border-radius: 20px; /* Coins arrondis */
+  z-index: 2;
+  /* Centre la photo si elle est seule sur une ligne */
+  margin: 0 auto;
+}
+
+/* L'image elle-même */
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplir le cadre sans être déformée */
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1); /* Petit bord subtil */
+  position: relative;
+  z-index: 3; /* Devant l'effet lumineux */
+}
+
+/* L'effet de lumière "Néon" derrière la photo */
+.photo-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 105%;
+  height: 105%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  filter: blur(40px); /* Le flou qui crée la lumière */
+  z-index: 1; /* Derrière l'image */
+  opacity: 0.4;
+  animation: pulseGlow 4s infinite alternate;
+}
+
+/* Petite animation pour que la lumière respire */
+@keyframes pulseGlow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.5; }
+}
+
+/* La partie texte */
+.about-text {
+    flex: 1; /* Prend le reste de la place */
+    min-width: 300px; /* Ne devient pas trop petit */
+}
+
+/* ---- VERSION MOBILE (TÉLÉPHONE) ---- */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column; /* Photo au-dessus, texte en dessous */
+    text-align: center;     /* Centre le texte */
+    gap: 40px;
+  }
+
+  /* Titre centré sur mobile */
+  .about-text h2 {
+    text-align: center !important;
+  }
+
+  /* Photo plus petite sur mobile */
+  .photo-wrapper {
+    width: 280px;
+    height: 320px;
+  }
+
+  /* Centre la liste à puces sur mobile */
+  .about-text ul {
+      display: inline-grid !important;
+      text-align: left; /* Les puces restent alignées à gauche */
+  }
+}
 
 
