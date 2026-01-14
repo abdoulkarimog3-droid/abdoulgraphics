@@ -120,3 +120,41 @@ function closeMenu() {
 
 // Lancement au démarrage
 document.addEventListener('DOMContentLoaded', chargerPortfolio);
+
+/* =========================
+   ANIMATION COMPTEUR (Stats)
+========================= */
+const counters = document.querySelectorAll('.counter');
+const statsSection = document.querySelector('.stats');
+let started = false; // Pour que l'animation ne se lance qu'une fois
+
+window.addEventListener('scroll', () => {
+    // Si la section existe et qu'on n'a pas encore démarré l'animation
+    if(statsSection && !started) {
+        const sectionPos = statsSection.offsetTop;
+        const sectionHeight = statsSection.clientHeight;
+        
+        // On lance quand la section est visible à l'écran
+        if(window.scrollY > (sectionPos - window.innerHeight + sectionHeight / 4)) {
+            counters.forEach(counter => {
+                counter.innerText = '0';
+                const updateCounter = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const c = +counter.innerText;
+                    
+                    // Vitesse du compteur (plus le chiffre est grand, plus ça va vite)
+                    const increment = target / 50; 
+
+                    if(c < target) {
+                        counter.innerText = `${Math.ceil(c + increment)}`;
+                        setTimeout(updateCounter, 30);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            });
+            started = true; // On bloque pour ne pas relancer
+        }
+    }
+});
