@@ -6,11 +6,8 @@
   <title>Abdoulgraphics | Designer Graphique Bamako</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
   <link rel="stylesheet" href="style.css?v=777">
 </head>
 
@@ -104,18 +101,60 @@
   </section>
 
   <section class="portfolio" id="portfolio">
-  <h2 class="section-title" data-aos="fade-up">Mon Portfolio</h2>
-  
-  <div class="portfolio-filters" data-aos="fade-up">
-    <button class="filter-btn active" data-filter="all">Tout</button>
-    <button class="filter-btn" data-filter="logo">Logos</button>
-    <button class="filter-btn" data-filter="affiche">Affiches</button>
-  </div>
+    <h2 class="section-title" data-aos="fade-up">Mon Portfolio</h2>
+    
+    <div class="portfolio-filters" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="logo">Logos</button>
+      <button class="filter-btn" data-filter="affiche">Affiches</button>
+    </div>
 
-  <div class="portfolio-grid"></div>
+    <div class="portfolio-grid"></div>
+  </section>
 
-</section>
-  
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="photo-wrapper" data-aos="zoom-in">
+        <div class="photo-glow"></div>
+        <img src="images/abdoul.jpg" alt="Abdoul Karim - Designer Graphique">
+      </div>
+
+      <div class="about-text" data-aos="fade-left">
+        <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Qui suis-je ?</h2>
+        <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.2rem;">L'art de transformer vos idées en impact visuel</h3>
+        
+        <p style="margin-bottom: 15px; line-height: 1.6; color: #ccc;">
+          Bonjour, je suis <strong>Abdoul</strong>, un designer graphique passionné et expérimenté basé à <strong>Bamako, Mali</strong>. Avec plus de 9 années passées à perfectionner mon art, je ne me contente pas de "faire des dessins" : je construis des identités visuelles fortes qui permettent aux entreprises de se démarquer dans un marché saturé.
+        </p>
+
+        <p style="margin-bottom: 15px; line-height: 1.6; color: #ccc;">
+          Mon approche combine <strong>créativité artistique</strong> et <strong>stratégie marketing</strong>. Que ce soit pour un logo minimaliste, une affiche événementielle percutante ou une charte graphique complète, chaque pixel est pensé pour captiver votre audience et transmettre vos valeurs.
+        </p>
+
+        <p style="margin-bottom: 25px; line-height: 1.6; color: #ccc;">
+          J'ai eu l'honneur d'accompagner plus de 120 clients, allant des startups ambitieuses aux grandes institutions. Mon objectif est simple : vous offrir un design haut de gamme, livré dans les délais, avec une communication fluide et professionnelle.
+        </p>
+
+        <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 30px;">
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-check-circle" style="color: var(--primary);"></i> Créativité Unique
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-check-circle" style="color: var(--primary);"></i> Respect des Délais
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-check-circle" style="color: var(--primary);"></i> Écoute Active
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-check-circle" style="color: var(--primary);"></i> Qualité HD
+          </li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary">Démarrer un projet avec moi</a>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="contact-container">
       <div class="contact-info" data-aos="fade-right">
@@ -186,15 +225,9 @@
   <script src="script.js"></script>
 
   <div id="lightbox" onclick="fermerLightbox()">
-  <span class="close-btn">&times;</span>
-  <img id="lightbox-img" src="">
-</div>
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" src="">
+  </div>
   
 </body>
 </html>
-
-
-
-
-
-
