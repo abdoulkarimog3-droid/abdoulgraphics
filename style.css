@@ -117,34 +117,11 @@ body {
 /* =========================
    HERO SECTION
 ========================= */
-.hero {
-  min-height: 100vh;
-  padding: 120px 8% 50px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
+/* --- DÉBUT DU NOUVEAU BLOC TITRE --- */
 
-.hero-content {
-  max-width: 600px;
-  z-index: 2;
-}
-
-.badge {
-  background: rgba(0, 180, 255, 0.1);
-  color: var(--primary);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 15px;
-  border: 1px solid rgba(0, 180, 255, 0.3);
-}
-
+/* 1. ON AGRANDIT LE TITRE */
 .hero-title {
-  font-size: 3.8rem;
+  font-size: 4.2rem; /* Plus grand (avant c'était 3.8rem) */
   line-height: 1.1;
   margin-bottom: 20px;
 }
@@ -152,74 +129,31 @@ body {
   color: transparent;
   -webkit-text-stroke: 1px var(--primary);
   position: relative;
+  white-space: nowrap; /* Empêche le texte animé de se couper */
 }
+
+/* 2. ON MODIFIE LE TEXTE ANIMÉ ET L'ANIMATION */
 .hero-title span::before {
-  content: "idées visuelles";
+  content: "émotions visuelles"; /* Le nouveau texte */
   position: absolute;
   color: var(--primary);
   width: 0%;
   overflow: hidden;
-  animation: fillText 3s infinite alternate;
-  border-right: 2px solid var(--primary);
+  /* Nouvelle animation : plus longue (6s) avec une pause */
+  animation: professionalFill 6s ease-in-out infinite;
+  border-right: 3px solid var(--primary); /* Curseur un peu plus épais */
 }
 
-@keyframes fillText { to { width: 100%; } }
-
-.hero p {
-  color: var(--text-gray);
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
+/* 3. NOUVELLE ANIMATION PROFESSIONNELLE (TAPE + PAUSE + EFFACE) */
+@keyframes professionalFill {
+  0% { width: 0%; }     /* Début : vide */
+  40% { width: 100%; }   /* À 40% du temps : le texte est tapé */
+  65% { width: 100%; }   /* PAUSE : reste affiché pour qu'on lise */
+  95% { width: 0%; }     /* S'efface doucement */
+  100% { width: 0%; }    /* Fin de la boucle */
 }
 
-.hero-btns { display: flex; gap: 20px; }
-
-.btn {
-  padding: 12px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  color: #fff;
-  box-shadow: 0 5px 20px rgba(0, 180, 255, 0.3);
-}
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 180, 255, 0.5); }
-
-.btn-secondary {
-  border: 2px solid var(--glass-border);
-  color: #fff;
-}
-.btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
-
-/* Animated Shapes */
-.shape {
-  position: absolute;
-  filter: blur(80px);
-  z-index: 1;
-  opacity: 0.6;
-}
-.shape-1 {
-  width: 400px; height: 400px;
-  background: var(--secondary);
-  top: -100px; right: -100px;
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-}
-.shape-2 {
-  width: 300px; height: 300px;
-  background: purple;
-  bottom: 50px; left: -50px;
-  border-radius: 50%;
-  animation: float 8s ease-in-out infinite reverse;
-}
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(30px); } }
+/* --- FIN DU NOUVEAU BLOC TITRE --- */
 
 /* =========================
    STATS
@@ -703,3 +637,4 @@ footer {
         padding: 25px;
     }
 }
+
