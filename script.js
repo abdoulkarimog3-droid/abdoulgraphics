@@ -158,3 +158,16 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+/* Fonction pour ouvrir/fermer la galerie Graph'AP */
+function toggleGraphap() {
+    const gallery = document.getElementById('graphap-gallery');
+    const btn = document.querySelector('.gallery-trigger .btn');
+    
+    if (!gallery.classList.contains('active')) {
+        gallery.classList.add('active');
+        btn.innerHTML = '<i class="fas fa-times"></i> Fermer le dossier';
+    } else {
+        gallery.classList.remove('active');
+        btn.innerHTML = '<i class="fas fa-folder-open"></i> Ouvrir le dossier Graph\'AP';
+    }
+}
