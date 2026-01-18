@@ -744,20 +744,23 @@ footer {
     flex-wrap: wrap;
 }
 
+/* VOS PHOTOS (AGRANDIES) */
 .founder-card img {
-    width: 130px;
-    height: 130px;
+    width: 200px;  /* 👈 C'est ici qu'on a agrandi (avant 130px) */
+    height: 200px; /* 👈 Il faut la même valeur pour rester rond */
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ff6600;
-    margin-bottom: 10px;
-    box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
+    border: 5px solid #ff6600; /* Bordure un peu plus épaisse */
+    margin-bottom: 15px;
+    box-shadow: 0 0 25px rgba(255, 102, 0, 0.3);
 }
 
+/* LOGO CENTRAL (AGRANDI) */
 .brand-logo-anim {
-    width: 140px; 
+    width: 220px; /* 👈 Beaucoup plus grand (avant 140px) */
     animation: floatLogo 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 15px rgba(255, 102, 0, 0.4));
+    filter: drop-shadow(0 0 20px rgba(255, 102, 0, 0.5));
+    margin: 20px auto; /* Un peu d'espace autour */
 }
 @keyframes floatLogo {
     0%, 100% { transform: translateY(0); }
@@ -797,3 +800,4 @@ footer {
     .founders-grid { flex-direction: column; }
     .brand-logo-anim { width: 100px; margin: 20px 0; }
 }
+
